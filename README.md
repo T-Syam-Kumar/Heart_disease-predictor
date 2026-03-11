@@ -8,7 +8,7 @@ This is a simple and intuitive web app built with **Streamlit + Python + scikit�
 
 - ✅ **No Heart Disease Risk**  
 - 🛑 **High Risk of Heart Disease**
-
+ 
 Use this to quickly check risk based on patient data — no installation, just open the link and fill in the form!
 
 ## 🧠 Why it matters
