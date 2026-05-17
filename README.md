@@ -27,7 +27,7 @@ Heart disease remains one of the leading health concerns worldwide. Early detect
 -  Accepts standard medical inputs (age, blood pressure, cholesterol, ECG, etc.)  
 -  Instant prediction using a pre‑trained logistic regression model  
 -  Sidebar shows the model details and accuracy on test data  
--  Option to view the original dataset  
+-  Option to view the original dataset
 
 ---
 
