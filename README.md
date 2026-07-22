@@ -6,8 +6,8 @@
 
 This is a simple and intuitive web app built with **Streamlit + Python + scikit‑learn** to predict the likelihood of heart disease, given some basic medical parameters (age, blood pressure, cholesterol, ECG results, etc.). It uses a trained logistic‑regression model on a publicly available “heart disease” dataset to output a clear prediction:
 
-- ✅ **No Heart Disease Risk**  
-- 🛑 **High Risk of Heart Disease**
+-  **No Heart Disease Risk**  
+-  **High Risk of Heart Disease**
  
 Use this to quickly check risk based on patient data — no installation, just open the link and fill in the form!
 
