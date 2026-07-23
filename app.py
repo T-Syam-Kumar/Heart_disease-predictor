@@ -21,7 +21,7 @@ st.write("Enter the patient's medical details below to predict whether they have
 # -----------------------------------------
 # Load Dataset
 # -----------------------------------------
-heart_data = pd.read_csv("heart_disease_data.csv")
+heart_data = pd.read_csv("heart.csv")
 
 # Features and Target
 X = heart_data.drop(columns="target", axis=1)
