@@ -112,9 +112,9 @@ if st.button("Predict Heart Disease"):
     age, sex, cp, trestbps, chol,
     fbs, restecg, thalach, exang,
     oldpeak, slope, ca, thal
-]], columns=X.columns)
+    ]], columns=X.columns)
 
-input_scaled = scaler.transform(input_data)
+    input_scaled = scaler.transform(input_data)
 
     prediction = model.predict(input_scaled)
 
