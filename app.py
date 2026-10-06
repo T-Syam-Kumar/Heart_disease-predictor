@@ -6,9 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
-# -----------------------------------------
-# Page Configuration
-# -----------------------------------------
+
 st.set_page_config(
     page_title="Heart Disease Prediction",
     page_icon="❤️",
@@ -18,16 +16,12 @@ st.set_page_config(
 st.title("❤️ Heart Disease Prediction System")
 st.write("Enter the patient's medical details below to predict whether they have heart disease.")
 
-# -----------------------------------------
-# Load Dataset
-# -----------------------------------------
+
 heart_data = pd.read_csv("heart.csv")
 
-# Features and Target
-X = heart_data.drop(columns="target", axis=1)
+X = heart_data.drop(columns=["target"])
 Y = heart_data["target"]
 
-# Train-Test Split
 X_train, X_test, Y_train, Y_test = train_test_split(
     X,
     Y,
@@ -36,26 +30,22 @@ X_train, X_test, Y_train, Y_test = train_test_split(
     random_state=2
 )
 
-# Feature Scaling
+
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# Train Model
+
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, Y_train)
 
-# -----------------------------------------
-# Sidebar
-# -----------------------------------------
+
 st.sidebar.header("About")
 st.sidebar.write(
     "This application predicts whether a person is likely to have heart disease using Logistic Regression."
 )
 
-# -----------------------------------------
-# User Inputs
-# -----------------------------------------
+
 
 age = st.number_input("Age", 1, 120, 50)
 
@@ -114,19 +104,17 @@ thal = st.selectbox(
     [0, 1, 2, 3]
 )
 
-# -----------------------------------------
-# Prediction Button
-# -----------------------------------------
+
 
 if st.button("Predict Heart Disease"):
 
-    input_data = np.array([
-        age, sex, cp, trestbps, chol,
-        fbs, restecg, thalach, exang,
-        oldpeak, slope, ca, thal
-    ]).reshape(1, -1)
+    input_data = pd.DataFrame([[
+    age, sex, cp, trestbps, chol,
+    fbs, restecg, thalach, exang,
+    oldpeak, slope, ca, thal
+]], columns=X.columns)
 
-    input_scaled = scaler.transform(input_data)
+input_scaled = scaler.transform(input_data)
 
     prediction = model.predict(input_scaled)
 
@@ -144,9 +132,7 @@ if st.button("Predict Heart Disease"):
     st.write(f"Probability of No Heart Disease: **{probability[0][0]:.2%}**")
     st.write(f"Probability of Heart Disease: **{probability[0][1]:.2%}**")
 
-# -----------------------------------------
-# Dataset Preview
-# -----------------------------------------
+
 
 with st.expander("View Dataset"):
     st.dataframe(heart_data)
