@@ -1,6 +1,6 @@
 #  Heart Disease Prediction App
 
-### Live Demo : [Streamlit Link](https://heartdisease-predictor-31.streamlit.app/)
+### Live Demo : [Streamlit Link to view](https://heartdisease-predictor-31.streamlit.app/)
 
 ##  What is this?
 
